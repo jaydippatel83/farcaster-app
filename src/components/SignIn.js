@@ -1,6 +1,4 @@
-"use client";
-import { SignInButton } from '@farcaster/auth-kit';
-import { useState } from 'react';
+"use client"; 
 import { useProfile } from '@farcaster/auth-kit';
 
 
@@ -9,10 +7,9 @@ export const Login = () => {
         isAuthenticated,
         profile: { bio, displayName, fid, pfpUrl, username }
     } = useProfile();
-    
+
     return (
-        <div className="flex flex-col items-center justify-center p-4">
-            <SignInButton />
+        <div className="flex flex-col items-center justify-center p-4"> 
             <div>
                 {isAuthenticated ? (
                     <div className="mt-4 p-4 border rounded-lg shadow">
