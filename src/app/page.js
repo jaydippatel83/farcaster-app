@@ -1,8 +1,7 @@
 'use client';
 import { Login } from "@/components/SignIn";
-import Image from "next/image";
-import '@farcaster/auth-kit/styles.css';
-import { AuthKitProvider } from '@farcaster/auth-kit';
+import Layout from "@/components/layout/layout";
+import { AuthKitProvider} from '@farcaster/auth-kit';
 
 const config = {
   rpcUrl: 'https://mainnet.optimism.io',
@@ -12,10 +11,10 @@ const config = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <AuthKitProvider config={config}>
-       <Login/>
-      </AuthKitProvider> 
-    </main>
+    <AuthKitProvider config={config}>
+      <Layout>
+        <Login />
+      </Layout>
+    </AuthKitProvider>
   );
 }
